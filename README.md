@@ -18,3 +18,24 @@ IMPLEMENT JSON/XML/SIMILAR...
 
 ## DATABASE ITSELF
 (5) Google sheets or similar text databse as well with SEARCH implementation from the WEB APP
+
+
+
+###### More Info:
+Few parts:
+URL: data.projectorrca.org (maybe)
+(1) rippleCODE Python Library allows users  (including us) to use python to write our data to a specified text file format without having to worry about the actual file writing…
+Will have a library with google sheets, xml, kml or json or some other form of support 
+Library will have a function write() - that writes the data to a .rpl certified FILE 
+(2) rippleDATA Client()
+Is an uploader/parser 
+Takes .rpl files and adds them to the database (implemented via python on the online database viewer)
+(3) rippleDATABASE itself 
+Is either a google sheet or similar that allows us  to view the data and store the data parameters in TEXT form 
+If it is a google sheet, we will implement a google script custom sidebar/search system to make it look more legit and be more useable
+The sheet will NOT be editable 
+(4) The grapher/UI
+The grapher and UI will be a google earth engine or google maps  creator system 
+The UI will be a website itself
+It will connect all the above together into one online UI
+It will also server as a way to view and access the data 
