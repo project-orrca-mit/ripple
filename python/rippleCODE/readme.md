@@ -7,20 +7,20 @@ rippleWRITE - will take the inputed data and location and created .rpl files and
 
 rippleCONVERT - converts traditional data formats to rpl, converts rpl to traditional data formats 
 
-'''
-/rippleCODE
+## Structure of Package
+      /rippleCODE
 
-      __init.py__
+            __init.py__
       
-      rippleREAD.py
+            rippleREAD.py
       
-      rippleWRITE.py
+            rippleWRITE.py
       
-      rippleCONVERT.py
+            rippleCONVERT.py
       
-      readme.md
+            readme.md
       
-      setup.py
+            setup.py
       
-      example.rpl
-'''
+            example.rpl
+
