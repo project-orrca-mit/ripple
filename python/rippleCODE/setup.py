@@ -11,7 +11,7 @@ setuptools.setup(
      author_email="deepak.kumar.iet@gmail.com",
      description="A Docker and AWS utility package",
      long_description=long_description,
-   long_description_content_type="text/markdown",
+     long_description_content_type="text/markdown",
      url="https://github.com/javatechy/dokr",
      packages=setuptools.find_packages(),
      classifiers=[
