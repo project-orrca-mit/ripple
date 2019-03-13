@@ -23,4 +23,6 @@ rippleCONVERT - converts traditional data formats to rpl, converts rpl to tradit
             setup.py
       
             example.rpl
+            
+            LICENSE (MIT)
 
