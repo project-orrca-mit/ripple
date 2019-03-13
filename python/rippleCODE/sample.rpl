@@ -1,0 +1,30 @@
+#information contains basic info about the rpl file and the data conatined in it
+</Information>
+    <date=2.3.19>
+    <usr="name">
+#contains the actual data samples
+</Samples>
+    <</Location1>>
+        <latitude=00000>
+        <longitude=00000>
+        #list of pollutants and concentrations
+        <pollutant1="name";concentration1=0000>
+        <pollutant1="name";concentration1=0000>
+        <pollutant1="name";concentration1=0000>
+    <</Location1>>
+        <latitude=00000>
+        <longitude=00000>
+        #list of pollutants and concentrations
+        <pollutant1="name";concentration1=0000>
+        <pollutant1="name";concentration1=0000>
+        <pollutant1="name";concentration1=0000>
+    <</Location1>>
+        <latitude=00000>
+        <longitude=00000>
+        #list of pollutants and concentrations
+        <pollutant1="name";concentration1=0000>
+        <pollutant1="name";concentration1=0000>
+        <pollutant1="name";concentration1=0000>
+</Notes>
+    <usrnotes="any notes use has">
+</END>
