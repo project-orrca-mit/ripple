@@ -1,6 +1,6 @@
 # here is the description
 
-### Essentiall RIPPLECODE is a python library that allows python-controlled robots to DIRECTLY WRITE ripple database files, decode these files, get data from these files, etc. It is used to interface ROBOTS with the ripple online database.
+### Essentially RIPPLECODE is a python library that allows python-controlled robots to DIRECTLY WRITE ripple database files, decode these files, get data from these files, etc. It is used to interface ROBOTS with the ripple online database.
 
 rippleREAD - will take the input of ripple files and provide a repository to read them in terminal/etc 
 
