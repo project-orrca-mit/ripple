@@ -88,11 +88,25 @@ class rippleSAMPLE:
        returns -- the accuracy radius of a sample in meters.
     """
     return self.ACC_RAD
-    
- '''
- 
+  
  def getCollector():
+    """DEFINITION: returns the collector of a sample
+    
+       Keyword returns:
+       returns -- string, the collector of a sample.
+    """
+    return self.collector
+  
  def getMode():
+    """DEFINITION: returns the type of a sample
+    
+       Keyword returns:
+       returns -- the type of a sample either test or actual.
+    """
+    return self.mode
+    
+ 
+ '''
  def getOfficialNumber():
  
  NOTE YOU CANNOT ERASE DATA
