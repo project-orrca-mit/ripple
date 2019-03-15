@@ -3,7 +3,7 @@
 class rippleSAMPLE:
   
   def __init__(loc, date, polLIST =[], ACC_RAD, collector, mode =False):
-    """DEFINITION: rippleSAMPLE.__init__() creates a rippleSAMPLE() object storing the data of a sample taken. The object stores the location, date, name data, accuracy, collector of the data sample and assigns a unique ripple official sample number to it.
+    """DEFINITION: rippleSAMPLE.__init__() creates a rippleSAMPLE() object storing the data of a sample taken. The object stores the location, date, name data, accuracy, collector of the data sample.
     
        Keyword arguments:
        loc -- a python TUPLE defining the location the same was taken of the form (LATITUDE, LONGITUDE)
@@ -16,7 +16,11 @@ class rippleSAMPLE:
        DISCLAIMER: In the interest of keeping samples robust, while we have implemented some functionality for getting and setting parameters, we've also implemented a VERIFY function, that will verify the data structure. You are also NOT ALLOWED to remove data, change the collector, or the sample type AFTER the object has been collected. For this please create a new sample. 
     """
     self.loc = loc
-    self.date = date
+    #checking the date
+    try:
+        self.date = datetime.strptime(date, '%m/%d/%Y')
+    except ValueError:
+        print("ERROR: Invalid date entered, please enter in form MM/DD/YYYY")
     self.polLIST = polLIST
     self.ACC_RAD = ACC_RAD
     self.collector = collector
@@ -104,16 +108,41 @@ class rippleSAMPLE:
        returns -- the type of a sample either test or actual.
     """
     return self.mode
-    
- 
- '''
- def getOfficialNumber():
- 
- NOTE YOU CANNOT ERASE DATA
- NOTE YOU CANNOT CHANGE THE COLLECTOR
- NOTE YOU CANNOT CHANGE THE DATA MODE
- 
- If you'd like to change these things please create a new sample...
-    
+  
  def verify():
- '''
+    """DEFINTINION: verifies the contents of the data sample NOT FOR ACCURACY but for syntax, it ensures all the items are the correct type.
+    
+       Keyword returns:
+       returns -- a boolean True or False if the data is valid...
+    """
+    passed = False
+    tests_passed = 0
+    tests = 5
+    
+    #checking for the location object
+    if !isinstance(self.loc[0], float):
+        print("ERROR: Warning, your LATITUDE is not a valid number!")
+    else:
+        tests_passed += 1
+    if !isinstance(self.loc[1], float):
+        print("ERROR: Warning, your LONGITUDE is not a valid number!")
+    else:
+        tests_passed += 1
+    if !isinstance(self.loc, tuple):
+        print("ERROR: Warning, your location is not a valid tuple, LATITUDE, LONGITUDE")
+    else:
+        tests_passed += 1
+    if -180 <= self.loc[0] <= 180:
+        print("ERROR: Warning, your LATITUDE is NOT a valid LATITUDE inside the -180 to 180 range")
+    else:
+        tests_passed += 1
+    if -180 <= self.loc[1] <= 180:
+        print("ERROR: Warning, your LONGITUDE is NOT a valid LONGITUDE inside the -180 to 180 range")
+    else:
+        tests_passed += 1
+    
+    if tests_passed == tests:
+        return True
+    return False
+        
+  
