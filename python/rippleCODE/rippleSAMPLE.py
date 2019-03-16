@@ -117,32 +117,57 @@ class rippleSAMPLE:
     """
     passed = False
     tests_passed = 0
-    tests = 5
+    tests = 7
     
     #checking for the location object
-    if !isinstance(self.loc[0], float):
+    if not(isinstance(self.loc[0], float)):
         print("ERROR: Warning, your LATITUDE is not a valid number!")
     else:
         tests_passed += 1
-    if !isinstance(self.loc[1], float):
+    if not(isinstance(self.loc[1], float)):
         print("ERROR: Warning, your LONGITUDE is not a valid number!")
     else:
         tests_passed += 1
-    if !isinstance(self.loc, tuple):
+    if not(isinstance(self.loc, tuple)):
         print("ERROR: Warning, your location is not a valid tuple, LATITUDE, LONGITUDE")
     else:
         tests_passed += 1
-    if -180 <= self.loc[0] <= 180:
+    if (-180 <= self.loc[0] <= 180):
         print("ERROR: Warning, your LATITUDE is NOT a valid LATITUDE inside the -180 to 180 range")
     else:
         tests_passed += 1
-    if -180 <= self.loc[1] <= 180:
+    if (-180 <= self.loc[1] <= 180):
         print("ERROR: Warning, your LONGITUDE is NOT a valid LONGITUDE inside the -180 to 180 range")
     else:
         tests_passed += 1
     
+    #check the sample data formatting
+    i = 0
+    for sample in self.polLIST:
+        if not(isinstance(sample[0], str)):
+          print("ERROR: sample " + i + " does not have a valid pollutant name.")
+          break
+        else:
+          i = i+1
+        if not(isinstance(sample[1], float)):
+          print("ERROR: sample " + i + " does not have a valid pollutant concentration as a float.")
+          break
+        else:
+          i = i+1
+    if (i+1) == len(self.polLIST):
+        tests_passed += 1
+    
+    #check the ACC_RAD
+    if not(isinstance(self.ACC_RAD, float)):
+        print("ERROR: Warning, your ACC_RAD is not a valid number!")
+    else:
+        tests_passed += 1
+    
+    #we are not currently checking collector or MODE
+    
     if tests_passed == tests:
         return True
+    print("ERROR: " + tests_passed + " out of " + tests " tests passed... check parameters.")
     return False
         
   
