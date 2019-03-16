@@ -2,7 +2,7 @@
 
 class rippleSAMPLE:
   
-  def __init__(loc, date, polLIST =[], ACC_RAD, collector, mode =False):
+  def __init__(self, loc, date, polLIST =[], ACC_RAD, collector, mode =False):
     """DEFINITION: rippleSAMPLE.__init__() creates a rippleSAMPLE() object storing the data of a sample taken. The object stores the location, date, name data, accuracy, collector of the data sample.
     
        Keyword arguments:
@@ -29,7 +29,7 @@ class rippleSAMPLE:
     else:
       self.mode = 'test sample
       
- def setLoc(loc):
+ def setLoc(self, loc):
     """DEFINITION: sets the location of the sample
   
        Keyword arguments:
@@ -37,7 +37,7 @@ class rippleSAMPLE:
     """
     self.loc = loc
     
- def getLoc():
+ def getLoc(self):
     """DEFINITION: returns the location of the object
     
        Keyword returns:
@@ -45,7 +45,7 @@ class rippleSAMPLE:
     """
     return self.loc
  
- def setDate(date):
+ def setDate(self, date):
     """DEFINITION: sets the date the sample was collected on
   
        Keyword arguments:
@@ -53,7 +53,7 @@ class rippleSAMPLE:
     """
     self.date = date
     
- def getDate():
+ def getDate(self):
     """DEFINITION: returns the date of the data sample
     
        Keyword returns:
@@ -61,7 +61,7 @@ class rippleSAMPLE:
     """
     return self.date
   
- def addData(data):
+ def addData(self, data):
     """DEFINITION: adds the data tuple (POLLUTANT, CONCENTRATION IN PPM) to the datalist.
        
        Keyword arguments:
@@ -69,7 +69,7 @@ class rippleSAMPLE:
     """
     self.polLIST.append(data)
     
- def getDATA():
+ def getDATA(self):
     """DEFINITION: returns the data in the sample
     
        Keyword returns:
@@ -77,7 +77,7 @@ class rippleSAMPLE:
     """
     return self.polLIST
  
- def setAcc(acc):
+ def setAcc(self, acc):
     """DEFINITION: sets the accuracy radius of the sample
   
        Keyword arguments:
@@ -85,7 +85,7 @@ class rippleSAMPLE:
     """
     self.ACC_RAD= acc
 
- def getDATA():
+ def getDATA(self):
     """DEFINITION: returns the accuracy radius of a sample
     
        Keyword returns:
@@ -93,7 +93,7 @@ class rippleSAMPLE:
     """
     return self.ACC_RAD
   
- def getCollector():
+ def getCollector(self):
     """DEFINITION: returns the collector of a sample
     
        Keyword returns:
@@ -101,7 +101,7 @@ class rippleSAMPLE:
     """
     return self.collector
   
- def getMode():
+ def getMode(self):
     """DEFINITION: returns the type of a sample
     
        Keyword returns:
@@ -109,7 +109,7 @@ class rippleSAMPLE:
     """
     return self.mode
   
- def verify():
+ def verify(self):
     """DEFINTINION: verifies the contents of the data sample NOT FOR ACCURACY but for syntax, it ensures all the items are the correct type.
     
        Keyword returns:
