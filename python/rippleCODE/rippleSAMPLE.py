@@ -1,8 +1,8 @@
-
+import datetime
 
 class rippleSAMPLE:
   
-  def __init__(self, loc, date, polLIST =[], ACC_RAD, collector, mode =False):
+ def __init__(self, loc, date, ACC_RAD, collector, polLIST =[], mode =False):
     """DEFINITION: rippleSAMPLE.__init__() creates a rippleSAMPLE() object storing the data of a sample taken. The object stores the location, date, name data, accuracy, collector of the data sample.
     
        Keyword arguments:
@@ -18,7 +18,7 @@ class rippleSAMPLE:
     self.loc = loc
     #checking the date
     try:
-        self.date = datetime.strptime(date, '%m/%d/%Y')
+        self.date = datetime.datetime.strptime(date, '%m/%d/%Y')
     except ValueError:
         print("ERROR: Invalid date entered, please enter in form MM/DD/YYYY")
     self.polLIST = polLIST
@@ -27,7 +27,7 @@ class rippleSAMPLE:
     if mode:
       self.mode = 'data sample'
     else:
-      self.mode = 'test sample
+      self.mode = 'test sample'
       
  def setLoc(self, loc):
     """DEFINITION: sets the location of the sample
@@ -167,7 +167,5 @@ class rippleSAMPLE:
     
     if tests_passed == tests:
         return True
-    print("ERROR: " + tests_passed + " out of " + tests " tests passed... check parameters.")
+    print("ERROR: " + tests_passed + " out of " + tests + " tests passed... check parameters.")
     return False
-        
-  
