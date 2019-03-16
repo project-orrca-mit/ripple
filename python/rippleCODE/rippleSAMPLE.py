@@ -109,6 +109,15 @@ class rippleSAMPLE:
     """
     return self.mode
   
+ def __str__(self):
+    """DEFINITION: returns a valid string representing the sample. 
+    
+       Keyword returns:
+       returns -- a vaild string to print the sample as text.
+    """
+    smpl = "Sample Data:\n\nCollector: " + self.collector + "\nLat/Lon: " + self.loc + "\nSamples: " + self.polLIST
+    return smpl
+  
  def verify(self):
     """DEFINTINION: verifies the contents of the data sample NOT FOR ACCURACY but for syntax, it ensures all the items are the correct type.
     
@@ -169,3 +178,6 @@ class rippleSAMPLE:
         return True
     print("ERROR: " + tests_passed + " out of " + tests + " tests passed... check parameters.")
     return False
+  
+  
+  
