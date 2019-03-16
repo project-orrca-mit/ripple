@@ -115,7 +115,7 @@ class rippleSAMPLE:
        Keyword returns:
        returns -- a vaild string to print the sample as text.
     """
-    smpl = "Sample Data:\n\nCollector: " + self.collector + "\nLat/Lon: " + self.loc + "\nSamples: " + self.polLIST
+    smpl = "Sample Data:\n\nCollected By: " + str(self.collector) + "\nDate Collected: " + str(self.date) + "\nLat/Lon: " + str(self.loc) + "\nSamples: " + str(self.polLIST) + "\nType: " + str(self.mode) + "\nValid Radius: " + str(self.ACC_RAD) + "m"
     return smpl
   
  def verify(self):
