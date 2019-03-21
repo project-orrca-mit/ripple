@@ -2,7 +2,7 @@ import datetime
 
 class rippleSAMPLE:
   
- def __init__(self, loc, date, ACC_RAD, collector, polLIST =[], mode =False):
+ def __init__(self, loc, date, ACC_RAD, depth, collector, polLIST =[], mode =False):
     """DEFINITION: rippleSAMPLE.__init__() creates a rippleSAMPLE() object storing the data of a sample taken. The object stores the location, date, name data, accuracy, collector of the data sample.
     
        Keyword arguments:
@@ -10,6 +10,7 @@ class rippleSAMPLE:
        date -- an official date the sample was collected on for documentation purposes. Form "MM/DD/YYYY"
        polLIST -- a list of tuples, (POLLUTANT, CONCENTRATION IN PPM) where pollutant is a string, and concentration is a float. DEFAULTS TO EMPTY
        ACC_RAD -- a float containing the accuracy radius of the data. Determine an accurate RADIUS IN METERS for which the sample is applicable. 
+       depth -- a float representing the depth the sample was taken in meters. 
        collector -- a STRING defining the organization who collected this data sample.
        mode -- a boolean value either True or False determining if this is an actual pollutant sample or simply a test sample. DEFAULTS TO FALSE.
        
@@ -23,6 +24,7 @@ class rippleSAMPLE:
         print("ERROR: Invalid date entered, please enter in form MM/DD/YYYY")
     self.polLIST = polLIST
     self.ACC_RAD = ACC_RAD
+    self.depth = depth
     self.collector = collector
     if mode:
       self.mode = 'data sample'
@@ -44,6 +46,22 @@ class rippleSAMPLE:
        returns -- the location of the sample
     """
     return self.loc
+  
+ def setDepth(self, depth):
+    """DEFINITION: sets the depth of the sample
+  
+       Keyword arguments:
+       depth -- a python float of the depth the sample was taken
+    """
+    self.depth = depth
+    
+ def getDepth(self):
+    """DEFINITION: returns the depth of the object
+    
+       Keyword returns:
+       returns -- the depth the sample was taken
+    """
+    return self.depth
  
  def setDate(self, date):
     """DEFINITION: sets the date the sample was collected on
@@ -126,7 +144,7 @@ class rippleSAMPLE:
     """
     passed = False
     tests_passed = 0
-    tests = 7
+    tests = 8
     
     #checking for the location object
     if not(isinstance(self.loc[0], float)):
@@ -169,6 +187,12 @@ class rippleSAMPLE:
     #check the ACC_RAD
     if not(isinstance(self.ACC_RAD, float)):
         print("ERROR: Warning, your ACC_RAD is not a valid number!")
+    else:
+        tests_passed += 1
+        
+    #check the depth
+    if not(isinstance(self.depth, float)):
+        print("ERROR: Warning, your depth is not a valid number!")
     else:
         tests_passed += 1
     
